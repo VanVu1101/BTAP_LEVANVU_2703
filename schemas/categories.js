@@ -1,8 +1,8 @@
 let mongoose = require('mongoose');
 
-let productSchema = mongoose.Schema(
+let categorySchema = mongoose.Schema(
     {
-        title: {
+        name: {
             type: String,
             required: true,
             unique: true
@@ -12,18 +12,9 @@ let productSchema = mongoose.Schema(
             required: true,
             unique: true
         },
-        price: {
-            type: Number,
-            default: 0
-        },
         description: {
             type: String,
             default: ""
-        },
-        category: {
-            type: mongoose.Types.ObjectId,
-            ref:'category',
-            required: true
         },
         images: {
             type: [String],
@@ -36,4 +27,4 @@ let productSchema = mongoose.Schema(
     }, {
     timestamps: true
 })
-module.exports = mongoose.model('product', productSchema)
+module.exports = mongoose.model('category', categorySchema)
